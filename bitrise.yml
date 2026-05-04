@@ -15,7 +15,6 @@ workflows:
     summary: Install dependencies and run Jest tests
     description: Installs npm dependencies and runs the project test suite.
     steps:
-      - activate-ssh-key@4: {}
       - git-clone@8: {}
       - restore-npm-package-manager-cache@1: {}
       - npm@1:
@@ -32,7 +31,6 @@ workflows:
     summary: Build a signed Android APK/AAB
     description: Installs dependencies and assembles a release Android build.
     steps:
-      - activate-ssh-key@4: {}
       - git-clone@8: {}
       - restore-npm-package-manager-cache@1: {}
       - npm@1:
