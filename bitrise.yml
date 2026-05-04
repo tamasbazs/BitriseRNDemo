@@ -16,12 +16,12 @@ workflows:
     description: Installs npm dependencies and runs the project test suite.
     steps:
       - git-clone@8: {}
-      - restore-npm-package-manager-cache@1: {}
+      - restore-npm-cache@3: {}
       - npm@1:
           title: npm install
           inputs:
             - command: install
-      - save-npm-package-manager-cache@1: {}
+      - save-npm-cache@1: {}
       - npm@1:
           title: Run tests
           inputs:
@@ -32,12 +32,12 @@ workflows:
     description: Installs dependencies and assembles a release Android build.
     steps:
       - git-clone@8: {}
-      - restore-npm-package-manager-cache@1: {}
+      - restore-npm-cache@3: {}
       - npm@1:
           title: npm install
           inputs:
             - command: install
-      - save-npm-package-manager-cache@1: {}
+      - save-npm-cache@1: {}
       - install-missing-android-tools@3:
           inputs:
             - gradlew_path: $GRADLEW_PATH
